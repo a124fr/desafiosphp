@@ -1,24 +1,11 @@
 <?php
 	
 	function seculoano(int $ano) {
-
-		$texto_ano = strval($ano);
-		$result = substr($ano, 0, 2);
-		$result2 = substr($ano, strlen($ano)-2, 2);
-
-		
-		$result = intval($result);
-		$result2 = intval($result2);
-
-		if($result2 > 0) {
-			$result++;
-		}
-
-		return "século ".$result;
+		return intval(($ano - 2)/100) + 1;
 	}
 
-	echo "\n";
-	//echo seculoano(2010);
-	//echo seculoano(1905);
-	//echo seculoano(1700);
-	echo seculoano(100);
+echo "Século: ".seculoano(100)."\n";
+echo "Século: ".seculoano(1700)."\n";
+echo "Século: ".seculoano(1702)."\n";
+echo "Século: ".seculoano(1905)."\n";
+echo "Século: ".seculoano(2021)."\n";
